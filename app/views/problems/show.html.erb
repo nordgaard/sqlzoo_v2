@@ -2,6 +2,7 @@
 <link><%= button_to 'Home', problems_path(@problems), method: 'get'%>
 <table border="1">
     <tr>
+      <th>Tutorial Name</th>
       <th>Chapter Name</th>
       <th>Problem Number</th>
       <th>Question</th>
@@ -10,6 +11,7 @@
       <th>Remove</th>
     </tr>
     <tr>
+      <td align="center"><%= @problem.tutorial %></td>
       <td align="center"><%= @problem.chapterName %></td>
       <td align="center"><%= @problem.problemNumber %></td>
       <td><%= @problem.question %></td>

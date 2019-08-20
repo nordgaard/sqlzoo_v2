@@ -1,0 +1,52 @@
+<section>
+  <div class="row">
+
+    <% if @problem && @problem.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@problem.errors.count, "error") %> prohibited this problem from being saved:</h2>
+     
+        <ul>
+        <% @problem.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="problem_single">
+        <h1>Edit Problem</h1>
+
+        <%= form_tag "/problems/#{@problem.id}", method: :patch do %>
+
+<!--       <div class="submissionfield"> --> 
+<!--       <span contenteditable="true"> --> 
+          <div>
+            <%= label_tag :'Chapter Name' %>
+            <%= text_field_tag :chapterName, @problem.chapterName %>
+          </div>
+          
+          <div>
+            <%= label_tag :'Problem Number' %>
+            <%= text_field_tag :problemNumber, @problem.problemNumber %>
+          </div>
+          
+          <div>
+            <%= label_tag :'Question' %>
+            <%= text_field_tag :question, @problem.question %>
+          </div>
+
+          <div>
+            <%= label_tag :'Answer' %>
+            <%= text_field_tag :answer, @problem.answer %>
+          </div>
+          
+          <%= submit_tag "Update Problem" %>
+
+        <% end %>
+      </div>
+    </div>
+   <link><%= button_to 'Cancel', problems_path(@problems), method: 'get'%>
+
+  </div>
+</section>

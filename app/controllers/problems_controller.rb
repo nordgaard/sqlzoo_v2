@@ -15,6 +15,7 @@ def index
 
   def create
     @problem = Problem.create(
+      tutorial: params[:tutorial],
       chapterName: params[:chapterName],
       problemNumber: params[:problemNumber],
       question: params[:question],
@@ -43,6 +44,7 @@ def index
   def update
     @problem = Problem.find_by(id: params[:id])
     @problem.update(
+      tutorial: params[:tutorial],
       chapterName: params[:chapterName],
       problemNumber: params[:problemNumber],
       question: params[:question],

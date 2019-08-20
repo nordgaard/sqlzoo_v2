@@ -22,6 +22,11 @@
 <!--       <div class="submissionfield"> --> 
 <!--       <span contenteditable="true"> --> 
           <div>
+            <%= label_tag :'Tutorial Name' %>
+            <%= text_field_tag :tutorial, @problem.tutorial %>
+          </div>
+          
+          <div>
             <%= label_tag :'Chapter Name' %>
             <%= text_field_tag :chapterName, @problem.chapterName %>
           </div>

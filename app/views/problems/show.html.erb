@@ -1,0 +1,21 @@
+<h1>Selected Problem</h1>
+<link><%= button_to 'Home', problems_path(@problems), method: 'get'%>
+<table border="1">
+    <tr>
+      <th>Chapter Name</th>
+      <th>Problem Number</th>
+      <th>Question</th>
+      <th>Answer</th>
+      <th>Edit</th>
+      <th>Remove</th>
+    </tr>
+    <tr>
+      <td align="center"><%= @problem.chapterName %></td>
+      <td align="center"><%= @problem.problemNumber %></td>
+      <td><%= @problem.question %></td>
+      <td><%= @problem.answer %></td>
+      <td><%= button_to 'Edit', edit_problem_path(@problem), method: 'get'%></td>
+      <td><%= button_to 'Remove', problem_path(@problem), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+    </tr>  
+</table>
+

@@ -43,8 +43,8 @@
     <% @problems.each do |problem| %>
     <tr>
       <td><%= link_to problem.tutorial, problem_path(problem) %></td>
-      <td><%= link_to problem.chapterName, problem_path(problem) %></td>
-      <td align="center"><%= link_to problem.problemNumber, problem_path(problem) %></td>
+      <td><%= link_to problem.chapter_name, problem_path(problem) %></td>
+      <td align="center"><%= link_to problem.problem_number, problem_path(problem) %></td>
       <td><%= link_to problem.question, problem_path(problem) %></td>
       <td><%= link_to problem.answer, problem_path(problem) %></td>
       <td><%= button_to 'Edit', edit_problem_path(problem), method: 'get'%></td>

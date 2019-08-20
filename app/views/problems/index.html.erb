@@ -22,6 +22,8 @@
 <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
   <thead>
     <tr>
+      <th class="th-sm">Tutorial Name
+      </th>      
       <th class="th-sm">Chapter Name
       </th>
       <th class="th-sm">Problem Number
@@ -40,6 +42,7 @@
   <tbody>
     <% @problems.each do |problem| %>
     <tr>
+      <td><%= link_to problem.tutorial, problem_path(problem) %></td>
       <td><%= link_to problem.chapterName, problem_path(problem) %></td>
       <td align="center"><%= link_to problem.problemNumber, problem_path(problem) %></td>
       <td><%= link_to problem.question, problem_path(problem) %></td>

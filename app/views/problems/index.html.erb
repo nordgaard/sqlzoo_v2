@@ -1,0 +1,56 @@
+<head>
+  
+ <script type="text/javascript"> $(document).ready( function () {
+        $('#indexTable').DataTable();
+    } );
+ </script>
+
+<script type="text/javascript">
+     $(document).ready(function () {
+    $('#dtBasicExample').DataTable();
+    $('.dataTables_length').addClass('bs-select');
+    });
+</script>
+
+</head>
+
+<h1 align="center">All Problems</h1>
+
+<table id = 'indexTable' border="1">
+
+
+<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th class="th-sm">Chapter Name
+      </th>
+      <th class="th-sm">Problem Number
+      </th>
+      <th class="th-sm">Question
+      </th>
+      <th class="th-sm">Answer
+      </th>
+      <th class="th-sm">Edit
+      </th>
+      <th class="th-sm">Remove
+      <tr>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @problems.each do |problem| %>
+    <tr>
+      <td><%= link_to problem.chapterName, problem_path(problem) %></td>
+      <td align="center"><%= link_to problem.problemNumber, problem_path(problem) %></td>
+      <td><%= link_to problem.question, problem_path(problem) %></td>
+      <td><%= link_to problem.answer, problem_path(problem) %></td>
+      <td><%= button_to 'Edit', edit_problem_path(problem), method: 'get'%></td>
+      <td><%= button_to 'Remove', problem_path(problem), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+     <% end %>
+    </tbody>
+</table>
+
+      <link><%= button_to 'New Problem', new_problem_path(@problems), method: 'get'%>
+
+

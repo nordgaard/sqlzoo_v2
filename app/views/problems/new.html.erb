@@ -9,6 +9,11 @@
             <%= form_tag '/problems', method: :post do %>
 
               <div>
+                <%= label_tag :'Tutorial Name' %>
+                <%= text_field_tag :tutorial %>
+              </div>
+              
+              <div>
                 <%= label_tag :'Chapter Name' %>
                 <%= text_field_tag :chapterName %>
               </div>

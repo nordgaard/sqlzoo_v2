@@ -12,8 +12,8 @@
     </tr>
     <tr>
       <td align="center"><%= @problem.tutorial %></td>
-      <td align="center"><%= @problem.chapterName %></td>
-      <td align="center"><%= @problem.problemNumber %></td>
+      <td align="center"><%= @problem.chapter_name %></td>
+      <td align="center"><%= @problem.problem_number %></td>
       <td><%= @problem.question %></td>
       <td><%= @problem.answer %></td>
       <td><%= button_to 'Edit', edit_problem_path(@problem), method: 'get'%></td>

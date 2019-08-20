@@ -1,0 +1,37 @@
+ <section>
+      <div class="row">
+
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="problem_single">
+            <h1>Create a new problem:</h1>
+            <link><%= button_to 'Home', problems_path(@problems), method: 'get'%>
+
+            <%= form_tag '/problems', method: :post do %>
+
+              <div>
+                <%= label_tag :'Chapter Name' %>
+                <%= text_field_tag :chapterName %>
+              </div>
+              
+              <div>
+                <%= label_tag :'Problem Number' %>
+                <%= text_field_tag :problemNumber %>
+              </div>
+              
+              <div>
+                <%= label_tag :question %>
+                <%= text_field_tag :question %>
+              </div>
+
+              <div>
+                <%= label_tag :answer %>
+                <%= text_field_tag :answer %>
+              </div>
+
+              <%= submit_tag "Process New Question" %>
+            <% end %>
+          </div>
+        </div>
+              <link><%= button_to 'Cancel', problems_path(@problems), method: 'get'%>
+      </div>
+    </section>
